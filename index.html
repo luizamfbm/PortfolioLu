@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">Lu — Business Analyst & Systems Designer</title>
+  <meta name="description" data-i18n-attr="content" data-i18n="meta.description"
+    content="Business Analyst with a product mindset. I build data systems and user-facing products — pipelines, validation, reconciliation, and decision-support tools that turn complex inputs into clear, actionable outputs." />
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("lu-theme");
+        var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        var lang = localStorage.getItem("lu-lang") || "en";
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang === "pt" ? "pt-BR" : "en");
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav" data-reveal>
+    <a href="#top" class="nav__brand" aria-label="Home">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Lu</span>
+    </a>
+
+    <div class="nav__right">
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav__tools">
+        <button class="lang-toggle" id="langToggle" type="button"
+          aria-label="Switch language" title="Switch language">
+          <span class="lang-toggle__opt" data-lang-opt="en">EN</span>
+          <span class="lang-toggle__divider" aria-hidden="true">/</span>
+          <span class="lang-toggle__opt" data-lang-opt="pt">PT</span>
+        </button>
+
+        <button class="theme-toggle" id="themeToggle" type="button"
+          aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__status" data-reveal>
+        <span class="pulse" aria-hidden="true"></span>
+        <span data-i18n="hero.status">Currently building <strong>TravelYourWay</strong></span>
+      </div>
+
+      <h1 class="hero__headline" data-reveal data-i18n="hero.headline">
+        Building <em>data-driven</em> systems that turn
+        <span class="accent-underline">complexity</span> into decisions.
+      </h1>
+
+      <p class="hero__sub" data-reveal data-i18n="hero.sub">
+        Business analyst with a product mindset. I build data and operational systems: pipelines, validation, reconciliation, and decision infrastructure that supports correct, traceable operations.
+      </p>
+
+      <p class="hero__micro" data-reveal data-i18n="hero.micro">
+        Focused on operational reliability, auditability, and clear investigation paths when something looks off.
+      </p>
+
+      <div class="hero__cta" data-reveal>
+        <a class="btn btn--primary" href="#work" data-i18n="hero.ctaPrimary">View case studies →</a>
+        <a class="btn btn--ghost" href="#contact" data-i18n="hero.ctaGhost">Get in touch</a>
+      </div>
+
+      <div class="hero__meta" data-reveal>
+        <div>
+          <span class="meta-label" data-i18n="hero.metaFocusLabel">Focus</span>
+          <span class="meta-value" data-i18n="hero.metaFocusValue">Data Pipelines · Building decision systems through data · Data engineering · Migrations </span>
+        </div>
+        <div>
+          <span class="meta-label" data-i18n="hero.metaStackLabel">Stack</span>
+          <span class="meta-value" data-i18n="hero.metaStackValue">Python · SQL · PySpark · AWS</span>
+        </div>
+        <div>
+          <span class="meta-label" data-i18n="hero.metaBasedLabel">Based</span>
+          <span class="meta-value" data-i18n="hero.metaBasedValue">Remote · Brazil</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED: TravelYourWay -->
+    <section class="featured" id="travelyourway" aria-labelledby="tyw-title">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow" data-i18n="axiom.eyebrow">Currently building · 2026</span>
+        <h2 class="section-title" id="tyw-title" data-i18n="axiom.title">TravelYourWay</h2>
+        <p class="section-sub" data-i18n="axiom.lede">
+          A system that turns user constraints — budget, preferences, priorities — into structured travel decisions in a single flow.
+        </p>
+      </div>
+
+      <div class="featured__card" data-reveal>
+        <div class="featured__top">
+          <div class="featured__visual" aria-hidden="true">
+            <div class="orbit">
+              <div class="orbit__core">T</div>
+              <span class="orbit__ring orbit__ring--1"></span>
+              <span class="orbit__ring orbit__ring--2"></span>
+              <span class="orbit__ring orbit__ring--3"></span>
+              <span class="orbit__node orbit__node--1"></span>
+              <span class="orbit__node orbit__node--2"></span>
+              <span class="orbit__node orbit__node--3"></span>
+              <span class="orbit__node orbit__node--4"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case__grid">
+          <div class="case__body">
+            <section class="case__block">
+              <h4 class="case__block-label" data-i18n="case.context">Context</h4>
+              <p data-i18n="axiom.context">
+                Planning a trip means moving between dozens of tabs: flights in one place, accommodation in another, activities somewhere else. Each platform compares within itself but not across. Most of the cost isn't booking. It's the decisions you have to make to know what you're choosing between in the first place.
+              </p>
+            </section>
+            <section class="case__block">
+              <h4 class="case__block-label" data-i18n="case.problem">Problem</h4>
+              <p data-i18n="axiom.problem">
+                Replace the tab-switching with a single flow. Capture the constraints that actually matter — budget, dates, what's worth spending on, what isn't — and turn them into a structured set of decisions across transport, accommodation, and activities.
+              </p>
+            </section>
+            <section class="case__block">
+              <h4 class="case__block-label" data-i18n="case.building">What I'm building</h4>
+              <p data-i18n="axiom.built">
+                TravelYourWay takes user constraints as inputs (budget caps, date windows, preferences across cost vs. comfort, transport vs. experience), runs them through a prioritization layer that resolves trade-offs against the user's stated priorities, and outputs a structured plan: transport options ranked, accommodation matched to budget and location, activities suggested based on the trip's purpose. The plan is editable, not final. The system supports the decision; it doesn't make it.
+              </p>
+            </section>
+            <section class="case__block">
+              <h4 class="case__block-label" data-i18n="case.decisions">Key decisions & trade-offs</h4>
+              <p data-i18n="axiom.decisions">
+                Prioritization expressed as explicit weights, not implicit defaults. Users tell the system whether they care about cost over comfort, central location over price, or experience density over downtime, and those choices propagate through every recommendation. Outputs are ranked options, not single answers, because trip planning is rarely about finding the "best" choice; it's about finding the right one for this trip. Trade-offs surfaced explicitly rather than hidden inside a recommendation.
+              </p>
+            </section>
+          </div>
+
+          <aside class="case__spec">
+            <div class="case__spec-block">
+              <span class="meta-label" data-i18n="case.stack">Stack</span>
+              <ul class="case__stack">
+                <li>Python</li>
+                <li>REST APIs (travel data)</li>
+                <li>SQL</li>
+                <li>HTML / CSS / JavaScript</li>
+              </ul>
+            </div>
+            <div class="case__spec-block case__impact">
+              <span class="meta-label" data-i18n="case.impact">Targeted impact</span>
+              <p data-i18n="axiom.impact">
+                Reduce trip-planning time from hours across multiple platforms to a single structured flow. Fewer platforms needed. Trade-offs visible instead of hidden. A plan the user can defend later: <em>this is what I picked, and this is why.</em>
+              </p>
+            </div>
+            <a class="link-arrow" href="#contact" data-i18n="axiom.cta">
+              Request a walkthrough <span aria-hidden="true">→</span>
+            </a>
+          </aside>
+        </div>
+
+        <div class="case__demonstrates">
+          <span class="meta-label" data-i18n="case.demonstrates">What this demonstrates</span>
+          <p data-i18n="axiom.demonstrates">
+            Designing a user-facing product with the same rigor as an internal system. Explicit inputs, explicit trade-offs, and outputs the user can act on.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <section class="work" id="work">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow" data-i18n="work.eyebrow">Selected work</span>
+        <h2 class="section-title" data-i18n="work.title">Case studies.</h2>
+        <p class="section-sub" data-i18n="work.sub">
+          Each project starts the same way. Map the system, find the inconsistency, build the simplest thing that makes it correct and auditable. Open one to see the work behind the result.
+        </p>
+      </div>
+
+      <div class="cases" id="cases">
+
+        <!-- 02 — CodeWiz Assistant -->
+        <article class="case" data-open="false">
+          <div class="case__row">
+            <span class="case__index">02</span>
+            <div class="case__row-main">
+              <h3 class="case__title" data-i18n="work.p1.title">CodeWiz Assistant</h3>
+              <p class="case__lede" data-i18n="work.p1.lede">
+                An internal Q&A assistant for the CodeWiz team and franchisees. Answers are strictly grounded in internal documentation, with guardrails against hallucination.
+              </p>
+              <ul class="tag-row">
+                <li data-i18n="work.p1.t1">RAG</li>
+                <li data-i18n="work.p1.t2">Anti-hallucination</li>
+                <li data-i18n="work.p1.t3">Persona-aware</li>
+              </ul>
+            </div>
+            <span class="case__year">2025</span>
+            <button class="case__toggle" type="button" aria-expanded="false" aria-controls="case-1-body">
+              <span class="case__toggle-label" data-i18n="case.toggleOpen">Read case study</span>
+              <span class="case__toggle-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="case__detail" id="case-1-body" aria-hidden="true">
+            <div class="case__detail-inner">
+              <div class="case__grid">
+                <div class="case__body">
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.context">Context</h4>
+                    <p data-i18n="work.p1.context">
+                      CodeWiz operations across team and franchisees ran on hundreds of internal documents — runbooks, policies, training material — and the same questions kept coming back to the same five people. Generic LLM answers weren't safe: a wrong number in a runbook breaks an operation.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.problem">Problem</h4>
+                    <p data-i18n="work.p1.problem">
+                      Build a Q&A assistant grounded strictly in CodeWiz's own documentation. No fabrication when the corpus doesn't cover the question. Responses adapted to the user's role (franchisee, support, leadership) and traceable back to the source paragraphs.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.built">What I built</h4>
+                    <p data-i18n="work.p1.built">
+                      Document ingestion automated via a Google Apps Script (weekly Drive sync) and a local pipeline that runs OCR on image PDFs, chunks semantically, classifies chunks by topic, redacts PII, and deduplicates. Embeddings via OpenAI <code>text-embedding-3-large</code>, stored in a local FAISS index. Retrieval plus GPT-4 Turbo for answer generation, with persona-aware prompts. A refusal layer keeps the model from inventing when retrieval confidence is low. A Streamlit UI for users; a separate Streamlit dashboard logs Q&A and surfaces the most common and unanswered questions per persona.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.decisions">Key decisions & trade-offs</h4>
+                    <p data-i18n="work.p1.decisions">
+                      FAISS over a managed vector DB because the corpus fits comfortably and local-first removed an operational dependency. <code>text-embedding-3-large</code> because retrieval quality drives the trust of the entire system. Persona-based prompts instead of one universal answer because the franchisee, the support agent, and leadership read the same fact differently and need different framing. PII redaction at ingest, not at retrieval, because the leak surface is wider at retrieval time.
+                    </p>
+                  </section>
+                </div>
+                <aside class="case__spec">
+                  <div class="case__spec-block">
+                    <span class="meta-label" data-i18n="case.stack">Stack</span>
+                    <ul class="case__stack">
+                      <li>Python</li>
+                      <li>FAISS</li>
+                      <li>OpenAI (embeddings + GPT-4 Turbo)</li>
+                      <li>PyMuPDF · Unstructured</li>
+                      <li>Streamlit</li>
+                      <li>Google Apps Script</li>
+                      <li>Docker · Docker Compose</li>
+                    </ul>
+                  </div>
+                  <div class="case__spec-block case__impact">
+                    <span class="meta-label" data-i18n="case.impact">Impact</span>
+                    <p data-i18n="work.p1.impact">
+                      In production use across team and franchisees. Reduced repeat questions to the original document owners. The questions CodeWiz couldn't answer became the team's editorial backlog — gaps in the documentation, surfaced as data instead of anecdotes.
+                    </p>
+                  </div>
+                </aside>
+              </div>
+
+              <!-- Demo: video walkthrough -->
+              <div class="case__demo">
+                <button class="demo-trigger" type="button" aria-expanded="false" aria-controls="demo-lume">
+                  <span class="demo-trigger__icon demo-trigger__icon--play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="11" height="11"><polygon points="5,3 21,12 5,21" fill="currentColor"/></svg>
+                  </span>
+                  <span class="demo-trigger__copy">
+                    <span class="demo-trigger__label" data-i18n="demo.lume.label">Watch the walkthrough</span>
+                    <span class="demo-trigger__sub" data-i18n="demo.lume.sub">~4 min — system overview</span>
+                  </span>
+                  <span class="demo-trigger__chevron" aria-hidden="true">→</span>
+                </button>
+                <div class="demo-video" id="demo-lume" data-open="false" aria-hidden="true">
+                  <div class="demo-video__inner">
+  <div class="demo-video__player demo-video__player--has-video">
+    <iframe 
+      class="demo-video__el"
+      src="https://www.youtube.com/embed/Nd1m1OFRPEA?si=1ltsghJpaTHKCi9E" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+                </div>
+              </div>
+
+              <div class="case__demonstrates">
+                <span class="meta-label" data-i18n="case.demonstrates">What this demonstrates</span>
+                <p data-i18n="work.p1.demonstrates">
+                  Building an AI assistant where trust is the product: source-grounded answers, persona-aware framing, and a refusal layer that keeps the system honest.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 — Data Pipeline -->
+        <article class="case" data-open="false">
+          <div class="case__row">
+            <span class="case__index">03</span>
+            <div class="case__row-main">
+              <h3 class="case__title" data-i18n="work.p2.title">Operational Data Pipeline</h3>
+              <p class="case__lede" data-i18n="work.p2.lede">
+                A detection pipeline that surfaces invisible financial exposure between regulated systems. Entity resolution, reconciliation, and validation at every boundary.
+              </p>
+              <ul class="tag-row">
+                <li data-i18n="work.p2.t1">Risk detection</li>
+                <li data-i18n="work.p2.t2">Entity resolution</li>
+                <li data-i18n="work.p2.t3">Reconciliation</li>
+              </ul>
+            </div>
+            <span class="case__year">2026</span>
+            <button class="case__toggle" type="button" aria-expanded="false" aria-controls="case-2-body">
+              <span class="case__toggle-label" data-i18n="case.toggleOpen">Read case study</span>
+              <span class="case__toggle-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="case__detail" id="case-2-body" aria-hidden="true">
+            <div class="case__detail-inner">
+              <div class="case__grid">
+                <div class="case__body">
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.context">Context</h4>
+                    <p data-i18n="work.p2.context">
+                      Two regulated systems that needed to stay in sync — a judicial registry and an operational ledger — and didn't. Charges kept being processed against accounts that should have been blocked. The gap was silent. The cost only became visible when it surfaced as a legal claim.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.problem">Problem</h4>
+                    <p data-i18n="work.p2.problem">
+                      Detect the gap between what was legally required and what the operation was actually doing, across hundreds of thousands of records. Names that don't always match, dates that drift between systems, entities that need careful resolution before any action.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.built">What I built</h4>
+                    <p data-i18n="work.p2.built">
+                      An end-to-end detection pipeline. Multi-source ingestion of judicial publications and operational records (276,000 movements). Cascading entity resolution that promotes deterministic matches and routes ambiguous cases to specialist review. Daily output of cases ranked by exposure, every flagged case auditable back to its source.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.decisions">Key decisions & trade-offs</h4>
+                    <p data-i18n="work.p2.decisions">
+                      Cascading entity resolution instead of strict CPF matching, because typos and homonyms in judicial publications produced false negatives. Quarantine over rejection: ambiguous records stay visible and routable to human auditors. PySpark because the volume justified it. CloudWatch logs every run so investigations start from a flagged record, not from a stakeholder asking why a number changed.
+                    </p>
+                  </section>
+                </div>
+                <aside class="case__spec">
+                  <div class="case__spec-block">
+                    <span class="meta-label" data-i18n="case.stack">Stack</span>
+                    <ul class="case__stack">
+                      <li>Python · PySpark</li>
+                      <li>AWS S3 · Glue · Athena</li>
+                      <li>AWS Wrangler</li>
+                      <li>CloudWatch</li>
+                      <li>QuickSight</li>
+                      <li>Excel</li>
+                    </ul>
+                  </div>
+                  <div class="case__spec-block case__impact">
+                    <span class="meta-label" data-i18n="case.impact">Impact</span>
+                    <p data-i18n="work.p2.impact">
+                      Surfaced R$ 10.5M in undue exposure that was previously invisible. Detection lag cut from 14 months to 48 hours. A hidden legal liability converted into an actionable operational queue.
+                    </p>
+                  </div>
+                </aside>
+              </div>
+
+              <!-- Data story: from blind spot to risk control -->
+              <div class="case__data-story" aria-label="Data story">
+                <h4 class="case__data-story-title" data-i18n="story.title">Data story · from blind spot to risk control</h4>
+
+                <div class="data-story">
+                  <article class="story-card">
+                    <span class="story-card__step">01 — <span data-i18n="story.card1.label">The blind spot</span></span>
+                    <div class="story-card__metrics">
+                      <div class="story-metric">
+                        <span class="story-metric__value" data-count="276000" data-format="int">276,000</span>
+                        <span class="story-metric__label" data-i18n="story.card1.metric1">records analyzed</span>
+                      </div>
+                      <div class="story-metric">
+                        <span class="story-metric__value" data-count="423" data-format="days">423 days</span>
+                        <span class="story-metric__label" data-i18n="story.card1.metric2">detection lag</span>
+                      </div>
+                    </div>
+                    <p class="story-card__copy" data-i18n="story.card1.copy">Across 276,000 movements, the silence between the judicial registry and the operational ledger created a 14-month detection lag. Undue charges accumulated, invisibly.</p>
+                  </article>
+
+                  <article class="story-card">
+                    <span class="story-card__step">02 — <span data-i18n="story.card2.label">Engineering trust</span></span>
+                    <div class="story-bars">
+                      <div class="story-bar">
+                        <div class="story-bar__head">
+                          <span class="story-bar__label" data-i18n="story.card2.bar1">High-confidence (auto)</span>
+                          <span class="story-bar__value" data-count="90" data-format="pct">90%</span>
+                        </div>
+                        <div class="story-bar__track" aria-hidden="true">
+                          <div class="story-bar__fill story-bar__fill--strong" data-fill="90"></div>
+                        </div>
+                      </div>
+                      <div class="story-bar">
+                        <div class="story-bar__head">
+                          <span class="story-bar__label" data-i18n="story.card2.bar2">Human review (audit)</span>
+                          <span class="story-bar__value" data-count="10" data-format="pct">10%</span>
+                        </div>
+                        <div class="story-bar__track" aria-hidden="true">
+                          <div class="story-bar__fill story-bar__fill--soft" data-fill="10"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="story-card__copy" data-i18n="story.card2.copy">A cascading entity resolution layer separates deterministic matches from cadastral ambiguity. 90% of the volume is automated safely; 10% goes to specialist audit, with the reason attached.</p>
+                  </article>
+
+                  <article class="story-card story-card--impact">
+                    <span class="story-card__step">03 — <span data-i18n="story.card3.label">Risk stopped</span></span>
+                    <div class="story-card__metrics">
+                      <div class="story-metric story-metric--xl">
+                        <span class="story-metric__value" data-count="10574794" data-format="brl">R$ 10,574,794</span>
+                        <span class="story-metric__label" data-i18n="story.card3.metric1">exposure avoided (CDC × 2)</span>
+                      </div>
+                    </div>
+                    <p class="story-card__copy" data-i18n="story.card3.copy">A R$ 10.5M hidden legal liability turned into a preventive barrier. Response time on new judicial events dropped from 400+ days to under 48 hours, in line with central-bank resolutions.</p>
+                  </article>
+                </div>
+              </div>
+
+              <div class="case__demonstrates">
+                <span class="meta-label" data-i18n="case.demonstrates">What this demonstrates</span>
+                <p data-i18n="work.p2.demonstrates">
+                  Turning a silent data gap between regulated systems into a measurable, defensible risk control.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 — ListaInteligente -->
+        <article class="case" data-open="false">
+          <div class="case__row">
+            <span class="case__index">04</span>
+            <div class="case__row-main">
+              <span class="case__wip" aria-label="In construction">
+                <span class="case__wip-loader" aria-hidden="true"></span>
+                <span class="case__wip-label" data-i18n="case.wip">In construction</span>
+              </span>
+              <h3 class="case__title" data-i18n="work.p3.title">ListaInteligente — Price-Tracking Shopping List</h3>
+              <p class="case__lede" data-i18n="work.p3.lede">
+                A shopping list that scrapes supermarket prices daily and tells you where to buy: a single store or split across stores, whichever costs less.
+              </p>
+              <ul class="tag-row">
+                <li data-i18n="work.p3.t1">Web scraping</li>
+                <li data-i18n="work.p3.t2">Optimization</li>
+                <li data-i18n="work.p3.t3">Automation</li>
+              </ul>
+            </div>
+            <span class="case__year" data-i18n="case.wipYear">In progress</span>
+            <button class="case__toggle" type="button" aria-expanded="false" aria-controls="case-3-body">
+              <span class="case__toggle-label" data-i18n="case.toggleOpen">Read case study</span>
+              <span class="case__toggle-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="case__detail" id="case-3-body" aria-hidden="true">
+            <div class="case__detail-inner">
+              <div class="case__grid">
+                <div class="case__body">
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.context">Context</h4>
+                    <p data-i18n="work.p3.context">
+                      Buying groceries online means switching between three or four supermarket sites and a calculator. Prices change weekly, item names vary by store, and "cheapest" depends on whether you're willing to split the order across stores. Most people give up comparing and buy where they're already used to.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.problem">Problem</h4>
+                    <p data-i18n="work.p3.problem">
+                      Watch prices across stores and tell the user where to buy. Two answers, not one: cheapest single-store order, and cheapest order split across stores. Show the trade-off explicitly so the user can choose.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.built">What I built</h4>
+                    <p data-i18n="work.p3.built">
+                      A Python system in three layers. A scraper built on headless Playwright pulls product prices from Extra and iFood Shop. A SQLite store with SQLAlchemy keeps price history per product. An optimizer compares the user's list across stores and returns two options: cheapest single-store, or cheapest split across stores, with the savings between them. APScheduler runs the scraper daily without intervention. FastAPI exposes the REST API; a Jinja2 dashboard renders the result.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.decisions">Key decisions & trade-offs</h4>
+                    <p data-i18n="work.p3.decisions">
+                      Playwright over plain HTTP requests because supermarket pages are JavaScript-rendered and their structure changes often. A real browser is slower but survives the reshuffles. SQLite for the MVP — price history fits comfortably and there's no operational reason for Postgres yet. Optimization expressed as two ranked options instead of one, because "buy at one store" and "split for max savings" answer different questions and the user has to choose. Retries with backoff on every scraper to handle the inevitable 503.
+                    </p>
+                  </section>
+                </div>
+                <aside class="case__spec">
+                  <div class="case__spec-block">
+                    <span class="meta-label" data-i18n="case.stack">Stack</span>
+                    <ul class="case__stack">
+                      <li>Python 3.11</li>
+                      <li>Playwright</li>
+                      <li>SQLite · SQLAlchemy</li>
+                      <li>FastAPI</li>
+                      <li>APScheduler</li>
+                      <li>Jinja2 · HTML/CSS</li>
+                    </ul>
+                  </div>
+                  <div class="case__spec-block case__impact">
+                    <span class="meta-label" data-i18n="case.impact">Impact</span>
+                    <p data-i18n="work.p3.impact">
+                      Working end-to-end MVP. Daily scraping runs unattended. Surfaces the gap between single-store and split-order pricing on real shopping lists. Next iterations: price-history charts and threshold alerts (notify when an item hits a target price).
+                    </p>
+                  </div>
+                </aside>
+              </div>
+              <div class="case__demonstrates">
+                <span class="meta-label" data-i18n="case.demonstrates">What this demonstrates</span>
+                <p data-i18n="work.p3.demonstrates">
+                  Designing a small system end-to-end: the differentiator isn't the CRUD, it's the optimization step that turns scraped prices into a clear decision.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 — CRONOS -->
+        <article class="case" data-open="false">
+          <div class="case__row">
+            <span class="case__index">05</span>
+            <div class="case__row-main">
+              <h3 class="case__title" data-i18n="work.p4.title">CRONOS — Accounting Rules Engine</h3>
+              <p class="case__lede" data-i18n="work.p4.lede">
+                A deterministic engine that automates ingestion and accounting calculations, cutting a 3-hour workflow down to 25 minutes.
+              </p>
+              <ul class="tag-row">
+                <li data-i18n="work.p4.t1">Automation</li>
+                <li data-i18n="work.p4.t2">Business rules</li>
+                <li data-i18n="work.p4.t3">Data Quality</li>
+              </ul>
+            </div>
+            <span class="case__year">2025</span>
+            <button class="case__toggle" type="button" aria-expanded="false" aria-controls="case-4-body">
+              <span class="case__toggle-label" data-i18n="case.toggleOpen">Read case study</span>
+              <span class="case__toggle-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="case__detail" id="case-4-body" aria-hidden="true">
+            <div class="case__detail-inner">
+              <div class="case__grid">
+                <div class="case__body">
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.context">Context</h4>
+                    <p data-i18n="work.p4.context">
+                      Accounting calculations depended on endless manual downloads from SharePoint and spreadsheet consolidation. Records arrived in heterogeneous formats, operational exceptions went unnoticed, and the entire process was slow, error-prone, and impossible to scale.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.problem">Problem</h4>
+                    <p data-i18n="work.p4.problem">
+                      Replace the 100% manual extraction and calculation with an automated pipeline. Every contract needed validation, every rule applied deterministically, and the result delivered so the business analyst only had to consume the ready data.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.built">What I built</h4>
+                    <p data-i18n="work.p4.built">
+                      The evolution was designed in phases: from manual to a local script, and now to an automated cloud process. Today, the analyst simply uploads the spreadsheet to SharePoint and triggers the flow. Ingestion occurs via the bank's proprietary tool, eliminating local downloads. The Python engine standardizes columns, isolates exceptions (invalid contracts), and commits the output natively to AWS Glue.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.decisions">Key decisions & trade-offs</h4>
+                    <p data-i18n="work.p4.decisions">
+                      A stateless architecture designed to ease the transition from local to AWS. Current execution is triggered on-demand to handle the operation's variable frequency. The architectural roadmap already plans the next iteration: event-driven execution (triggered by SharePoint uploads) with a batch window (debouncing) to group multiple files into a single run, preventing concurrency issues.
+                    </p>
+                  </section>
+                </div>
+                <aside class="case__spec">
+                  <div class="case__spec-block">
+                    <span class="meta-label" data-i18n="case.stack">Stack</span>
+                    <ul class="case__stack">
+                      <li>Python</li>
+                      <li>Excel</li>
+                      <li>AWS Glue</li>
+                    </ul>
+                  </div>
+                  <div class="case__spec-block case__impact">
+                    <span class="meta-label" data-i18n="case.impact">Impact</span>
+                    <p data-i18n="work.p4.impact">
+                      Cycle time reduced from <strong>~3 hours to ~25 minutes</strong> per run (+86% efficiency gain). Invalid contracts now trigger alerts instead of corrupting the calculation. Operations regained control of their time, focusing on analyzing the output rather than executing the process.
+                    </p>
+                  </div>
+                </aside>
+              </div>
+              <div class="case__demonstrates">
+                <span class="meta-label" data-i18n="case.demonstrates">What this demonstrates</span>
+                <p data-i18n="work.p4.demonstrates">
+                  The ability to iteratively migrate a chaotic operational process (manual → local → cloud), modeling business rules in code, and creating a simple interface for the end user.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 — QA Modernization -->
+        <article class="case" data-open="false">
+          <div class="case__row">
+            <span class="case__index">06</span>
+            <div class="case__row-main">
+              <h3 class="case__title" data-i18n="work.p5.title">Accounting QA Modernization & Automation</h3>
+              <p class="case__lede" data-i18n="work.p5.lede">
+                Migrated a QA process to the cloud, reducing software costs and enriching the data model to eliminate manual validations.
+              </p>
+              <ul class="tag-row">
+                <li data-i18n="work.p5.t1">Data Integration</li>
+                <li data-i18n="work.p5.t2">Cloud Automation</li>
+                <li data-i18n="work.p5.t3">Cost Reduction</li>
+              </ul>
+            </div>
+            <span class="case__year">2026</span>
+            <button class="case__toggle" type="button" aria-expanded="false" aria-controls="case-5-body">
+              <span class="case__toggle-label" data-i18n="case.toggleOpen">Read case study</span>
+              <span class="case__toggle-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="case__detail" id="case-5-body" aria-hidden="true">
+            <div class="case__detail-inner">
+              <div class="case__grid">
+                <div class="case__body">
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.context">Context</h4>
+                    <p data-i18n="work.p5.context">
+                      A weekly validation process operated on a high-cost legacy software. The system did its job but lacked complementary contract information. Consequently, analysts had to manually consult a second system to validate each record, which became a major bottleneck for operations.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.problem">Problem</h4>
+                    <p data-i18n="work.p5.problem">
+                      Migrate the pipeline to AWS to reduce infrastructure costs while seizing the opportunity to centralize information. The goal was to automatically cross-reference accounting data with the contracts database, sparing analysts from validating across multiple systems.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.built">What I built</h4>
+                    <p data-i18n="work.p5.built">
+                      The process was rebuilt into an AWS Glue job, using AWS Data Wrangler to orchestrate Athena queries. The new pipeline consumes democratized tables in the corporate data lake, integrating QA data with contract details into a single view. The finalized output is automatically pushed to stakeholders.
+                    </p>
+                  </section>
+                  <section class="case__block">
+                    <h4 class="case__block-label" data-i18n="case.decisions">Key decisions & trade-offs</h4>
+                    <p data-i18n="work.p5.decisions">
+                      Treated the migration as an opportunity to consolidate data. By bringing complementary data into the structural pipeline, the need for secondary system lookups was eliminated. AWS Wrangler was chosen to keep the architecture fluid between Glue and Athena.
+                    </p>
+                  </section>
+                </div>
+                <aside class="case__spec">
+                  <div class="case__spec-block">
+                    <span class="meta-label" data-i18n="case.stack">Stack</span>
+                    <ul class="case__stack">
+                      <li>Python</li>
+                      <li>AWS Glue</li>
+                      <li>AWS Athena</li>
+                      <li>AWS Data Wrangler</li>
+                    </ul>
+                  </div>
+                  <div class="case__spec-block case__impact">
+                    <span class="meta-label" data-i18n="case.impact">Impact</span>
+                    <p data-i18n="work.p5.impact">
+                      The expensive legacy software routine was decommissioned, driving immediate financial savings. The time analysts spent manually consulting contracts was reduced to zero. The business team now receives a fully enriched, ready-to-act report, drastically optimizing their workflow.
+                    </p>
+                  </div>
+                </aside>
+              </div>
+              <div class="case__demonstrates">
+                <span class="meta-label" data-i18n="case.demonstrates">What this demonstrates</span>
+                <p data-i18n="work.p5.demonstrates">
+                  The ability to combine cloud cost reduction with user experience improvements, integrating scattered data to eliminate repetitive operational work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow" data-i18n="about.eyebrow">About</span>
+        <h2 class="section-title" data-i18n="about.title">How I work.</h2>
+        <p class="section-sub" data-i18n="about.lede">
+          I work at the line between analysis, product, and operational systems. The place where decisions have to be defensible and numbers have to be correct.
+        </p>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__copy" data-reveal>
+          <p data-i18n="about.p1">
+            Most of what I do is finding inconsistency in a system and removing it without adding new failure modes. The output is rarely a report. It's a workflow that no longer needs me, a pipeline that doesn't drift, a number that can be defended when it's questioned.
+          </p>
+          <p data-i18n="about.p2">
+            I'm currently building <strong>TravelYourWay</strong>, a system that turns user constraints into structured travel decisions. It's a user-facing product, but the design discipline is the same: capture the inputs, surface the trade-offs, and produce something the user can act on.
+          </p>
+          <p data-i18n="about.p3">
+            I care about correctness, auditability, and the quiet kind of polish that makes complicated systems feel obvious. The best work is legible to everyone who depends on it, not just the person who built it.
+          </p>
+          <p data-i18n="about.p4">
+            I do my best work where the analyst, the engineer, and the operator all need to look at the same thing and walk away with the same picture.
+          </p>
+        </div>
+
+        <aside class="about__meta" data-reveal>
+          <div class="meta-block">
+            <span class="meta-label" data-i18n="about.metaCurrentlyLabel">Currently</span>
+            <span class="meta-value" data-i18n="about.metaCurrentlyValue">Building TravelYourWay</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label" data-i18n="about.metaPracticeLabel">Practice</span>
+            <span class="meta-value" data-i18n="about.metaPracticeValue">
+              Business analysis · Data systems · Validation & reconciliation · Operational reliability
+            </span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label" data-i18n="about.metaInterestsLabel">Interests</span>
+            <span class="meta-value" data-i18n="about.metaInterestsValue">
+              Decision infrastructure · Auditability · Investigation workflows
+            </span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label" data-i18n="about.metaToolsLabel">Tools</span>
+            <span class="meta-value" data-i18n="about.metaToolsValue">
+              Python · SQL · PySpark · AWS (S3, Glue, Athena, CloudWatch, SageMaker) · AWS Wrangler · QuickSight · Excel
+            </span>
+          </div>
+        </aside>
+      </div>
+
+      <ol class="principles" data-reveal aria-label="Operating principles">
+        <li>
+          <span class="principles__num">i.</span>
+          <span class="principles__line" data-i18n="about.principle1">Correctness is a deliverable, not a tone.</span>
+        </li>
+        <li>
+          <span class="principles__num">ii.</span>
+          <span class="principles__line" data-i18n="about.principle2">A system you can't explain is a system no one will trust.</span>
+        </li>
+        <li>
+          <span class="principles__num">iii.</span>
+          <span class="principles__line" data-i18n="about.principle3">Optimize for the day after launch, not launch day.</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact__inner" data-reveal>
+        <span class="eyebrow" data-i18n="contact.eyebrow">Contact</span>
+        <h2 class="contact__headline" data-i18n="contact.headline">
+          Have a system that needs <em>untangling?</em>
+        </h2>
+        <p class="contact__sub" data-i18n="contact.sub">
+          I take on a small number of engagements at a time. Tell me what you're working on. Short notes welcome, specific problems even better.
+        </p>
+
+        <a class="contact__email" href="mailto:luizafelix001@gmail.com">
+          luizafelix001@gmail.com
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <ul class="socials" aria-label="Elsewhere">
+          <li><a href="https://www.linkedin.com/in/luíza-bôa-morte" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/luizamfbm" target="_blank" rel="noopener">GitHub</a></li>
+         
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="footer.copy">© 2026 Lu</span>
+    <span class="footer__meta" data-i18n="footer.meta">Built with care · Hosted on GitHub Pages</span>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
